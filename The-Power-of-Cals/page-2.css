@@ -1,0 +1,47 @@
+.number {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 25px;
+}
+
+.answer {
+  display: flex;
+  height: 300px;
+  width: 500px;
+  align-content: space-evenly;
+  justify-content: space-evenly;
+  margin: 50px auto;
+  flex-wrap: wrap;
+}
+
+.box-1 {
+  display: flex;
+  height: 100px;
+  width: 200px;
+  justify-content: center;
+  border: 3px solid black;
+  font-size: 50px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.plus {
+  display: flex;
+  height: 100px;
+  width: 200px;
+  align-items: center;
+  border: 3px solid black;
+  justify-content: center;
+  font-size: 50px;
+}
+
+.ans {
+  display: flex;
+  height: 100px;
+  width: 200px;
+  justify-content: center;
+  border: 3px solid black;
+  font-size: 50px;
+  margin: 20px;
+}
