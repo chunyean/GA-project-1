@@ -15,26 +15,29 @@ ques2.innerText = num2;
 //function to generate an array with 3 random answer plus correct answer
 function randomUniqueNum(range, outputCount) {
   let arr = [];
-  for (let i = 1; i <= range; i++) {
+  for (let i = 0; i < range; i++) {
     arr.push(i);
   }
-  const index = arr.indexOf(answer);
-  arr.splice(index, 1);
 
   let result = [];
 
   for (let i = 1; i <= outputCount; i++) {
-    const random = Math.floor(Math.random() * (range - 1 - i));
+    const random = Math.floor(Math.random() * (range - i));
     result.push(arr[random]);
     arr[random] = arr[range - 1 - i];
   }
-
-  const idx = Math.floor(Math.random() * (result.length + 1));
-  result.splice(idx, 0, answer);
   return result;
 }
 
-// function to put answer into random box
+function checkNum(array) {
+  const idx = Math.floor(Math.random() * array.length);
+  if (!array.includes(answer)) {
+    array.splice(idx, 1, answer);
+  }
+  return array;
+}
+
+// function to place answer into random box
 function answerBox(boxAns) {
   for (let j = 0; j <= 3; j++) {
     boxAns[j].innerText = ranAns[j];
@@ -46,5 +49,33 @@ const answer = num1 + num2;
 const correctAnswer = document.getElementsByClassName("ans");
 
 //set all the answer into boxes
-const ranAns = randomUniqueNum(19, 3);
+const ranAns = checkNum(randomUniqueNum(19, 4));
 answerBox(correctAnswer);
+
+for (let i = 0; i < correctAnswer.length; i++) {
+  correctAnswer[i].addEventListener("click", checkAns);
+}
+
+function checkAns(event) {
+  const clicked = event.target;
+  if (clicked.innerText != answer) {
+    const current = clicked.innerText;
+    clicked.innerText = "Wrong!";
+    setTimeout(() => (clicked.innerText = current), 300);
+    return;
+  }
+
+  if (clicked.innerText == answer) {
+    const current = clicked.innerText;
+    clicked.innerText = "Bingo!";
+    setTimeout(() => (clicked.innerText = current), 1000);
+    const score = 20;
+  }
+}
+
+function collectScore(score) {
+  let totalScore = 0;
+  totalScore = score + totalScore;
+  return score;
+}
+console.log(collectScore(score));
