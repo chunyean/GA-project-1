@@ -67,6 +67,8 @@ function collectScore(number) {
   return totalScore;
 }
 
+collectScore(point);
+
 function checkAns(event) {
   const clicked = event.target;
   if (clicked.innerText != answer) {
@@ -112,3 +114,7 @@ function countdown(number) {
 }
 
 countdown(10);
+
+collectScore(point);
+
+localStorage.setItem("quiz2Total", totalScore);

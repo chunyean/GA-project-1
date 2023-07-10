@@ -114,6 +114,5 @@ function countdown(number) {
 countdown(10);
 
 collectScore(point);
-console.log(totalScore);
 
 localStorage.setItem("quiz1Total", totalScore);
