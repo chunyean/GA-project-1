@@ -19,16 +19,21 @@
   </header>
   <body>
     <main>
-      <div class="words">
+      <div class="words" id="words">
         <div class="intro">Little <br />Introduction</div>
         <div class="score">Best<br />Score</div>
-        <input type="text" id="playername" name="playername" />
+        <input type="text" id="playername" name="playername" value=""/>
+        <input type="submit" id="btn" value="submit" onclick="getValue()"/> <br />
       </div>
-      <input type="submit" id="btn" value="submit" /> <br />
+      <div class="wel" id="wel">
+        <div class="welcome" id="welcome">welcome box</div>
+        <div class="guide" id="guide"></div>
+      </div>
       <button
         type="button"
         class="btn btn-outline-danger"
-        onclick="window.location.href = 'quiz-page/page-2.html';"
+        id="start"
+        onclick="window.location.href = 'quiz-page/quiz-1.html';"
       >
         Start
       </button>

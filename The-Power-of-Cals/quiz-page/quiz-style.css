@@ -59,3 +59,19 @@
   height: 100px;
   width: 50px;
 }
+
+.display {
+  display: grid;
+  grid-template-columns: 300px;
+  grid-template-rows: repeat(3, 100px);
+  align-content: space-evenly;
+  justify-content: space-evenly;
+  margin: 50px auto;
+}
+
+.final {
+  justify-items: center;
+  align-items: center;
+  text-align:center
+
+}

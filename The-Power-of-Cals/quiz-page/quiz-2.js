@@ -1,3 +1,7 @@
+document.getElementById("display").style.display = "none";
+
+document.getElementById("button").disabled = true;
+
 function getRandomNum(max) {
   return Math.floor(Math.random() * max);
 }
@@ -67,8 +71,6 @@ function collectScore(number) {
   return totalScore;
 }
 
-collectScore(point);
-
 function checkAns(event) {
   const clicked = event.target;
   if (clicked.innerText != answer) {
@@ -81,6 +83,8 @@ function checkAns(event) {
     const current = clicked.innerText;
     clicked.innerText = "Bingo!";
     setTimeout(() => (clicked.innerText = current), 1000);
+
+    document.getElementById("button").disabled = false;
 
     function poi(number) {
       total = number + total;
@@ -99,19 +103,19 @@ function checkAns(event) {
 
 function countdown(number) {
   setInterval(function () {
-    if (number <= 0) {
-      clearInterval(countdown);
-      document.getElementById("timer").innerText = "Time's Up!";
-      for (let i = 0; i < correctAnswer.length; i++) {
-        correctAnswer[i].removeEventListener("click", checkAns);
-      }
-    }
     if (number > 0) {
       document.getElementById("timer").innerText = number + "s";
       number -= 1;
+    } else if (number <= 0) {
+      clearInterval(countdown);
+      document.getElementById("timer").innerText = "Time's Up!";
+      document.getElementById("answer").style.display = "none";
+      document.getElementById("display").style.display = "grid";
     }
   }, 1000);
 }
+
+document.getElementById("final").innerText = totalScore;
 
 countdown(10);
 

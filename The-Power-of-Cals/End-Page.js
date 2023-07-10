@@ -1,4 +1,4 @@
-let colScore = Number(localStorage.getItem("quiz1Total"));
+let finalScore = Number(localStorage.getItem("quiz5Total"));
 
-document.getElementById("total").innerText = colScore
+document.getElementById("total").innerText = finalScore
 

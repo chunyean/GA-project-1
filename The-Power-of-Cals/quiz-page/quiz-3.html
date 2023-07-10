@@ -11,7 +11,7 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="quiz-page/quiz-style.css" />
+    <link rel="stylesheet" href="quiz-style.css" />
   </head>
   <body>
     <div class="number" id="number">
@@ -32,11 +32,23 @@
       <button
         type="button"
         class="btn btn-outline-danger"
-        onclick="window.location.href = 'quiz-page/quiz-4.html';"
+        id="button"
+        onclick="window.location.href = 'quiz-4.html';"
       >
         Next Quiz
       </button>
     </div>
-    <script src="page-3.js"></script>
+    <div class="display" id="display">
+      <div class="final" id="final">Final Score</div>
+      <div class="thx" id="thx">Thank you</div>
+      <button
+        type="button"
+        class="btn btn-outline-danger"
+        onclick="window.location.href = '../The-Power-of-Cals.html';"
+      >
+        Main Menu
+      </button>
+    </div>
+    <script src="quiz-3.js"></script>
   </body>
 </html>

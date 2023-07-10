@@ -1,8 +1,8 @@
 header {
   text-align: center;
   font-size: 80px;
-  font-family: 'Homesweet', sans-serif;
-  color:fuchsia;
+  font-family: "Homesweet", sans-serif;
+  color: fuchsia;
   max-width: 100%;
 }
 
@@ -26,7 +26,6 @@ header {
   text-align: center;
   font-size: 20px;
   /* border: solid black; */
-
 }
 
 #playername {
@@ -35,11 +34,12 @@ header {
 }
 
 body {
-    text-align: center;
-    background-image: url("https://wallpapercave.com/dwp2x/aP75xr3.jpg");
-    max-width: 100%;
+  text-align: center;
+  background-image: url("https://wallpapercave.com/dwp2x/aP75xr3.jpg");
+  max-width: 100%;
 }
 
 #btn {
-    margin-top: 20px;
+  grid-area: 1/5/2/6;
+  margin-top: 20px;
 }
