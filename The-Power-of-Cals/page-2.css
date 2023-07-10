@@ -45,3 +45,17 @@
   font-size: 50px;
   margin: 20px;
 }
+
+.score {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  width: 200px;
+}
+
+.point {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  width: 50px;
+}

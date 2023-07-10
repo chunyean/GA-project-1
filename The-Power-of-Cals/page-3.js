@@ -56,11 +56,11 @@ for (let i = 0; i < correctAnswer.length; i++) {
   correctAnswer[i].addEventListener("click", checkAns);
 }
 
-let totalScore = 0;
-// let score = 0;
+let totalScore = Number(localStorage.getItem("quiz1Total"));
 let point = 20;
+let total = Number(localStorage.getItem("quiz1Total"));
 
-let total = 0;
+document.getElementById("point").innerText = totalScore;
 
 function collectScore(number) {
   totalScore = number + totalScore;
@@ -112,8 +112,3 @@ function countdown(number) {
 }
 
 countdown(10);
-
-collectScore(point);
-console.log(totalScore);
-
-localStorage.setItem("quiz1Total", totalScore);
