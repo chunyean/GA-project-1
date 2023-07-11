@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Power of Cals</title>
     <link href="https://fonts.cdnfonts.com/css/homesweet" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/all-disney" rel="stylesheet" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -20,18 +21,46 @@
   <body>
     <main>
       <div class="words" id="words">
-        <div class="intro">Little <br />Introduction</div>
+        <div class="intro" id="intro">Little Introduction</div>
+        <div class="modal" id="modal">
+          <div class="contents" id="contents">
+            <span class="close" id="close">x</span>
+            <p>
+              The Power of Cals<br />
+
+              Cals is stand for calcualtion. <br />
+
+              This game is create to let player enjoy the fun of calculation.
+              Gain the function of every symbol of calculation.<br />
+
+              Starting we will play with plus (+) calculation. <br />
+
+              Each quiz will have 10second to answer. <br />
+
+              Try your best to get the highest score.<br />
+
+              Have Fun!!!
+            </p>
+          </div>
+        </div>
         <div class="score">Best<br />Score</div>
-        <input type="text" id="playername" name="playername" value=""/>
-        <input type="submit" id="btn" value="submit" onclick="getValue()"/> <br />
+        <input
+          type="text"
+          id="playername"
+          name="playername"
+          value=""
+          placeholder="Please key in your name"
+        />
+        <input type="submit" id="btn" value="submit" onclick="getValue()" />
+        <br />
       </div>
       <div class="wel" id="wel">
-        <div class="welcome" id="welcome">welcome box</div>
-        <div class="guide" id="guide"></div>
+        <div class="welcome" id="welcome"></div>
+        <!-- <div class="guide" id="guide"></div> -->
       </div>
       <button
         type="button"
-        class="btn btn-outline-danger"
+        class="btn btn-danger btn-lg"
         id="start"
         onclick="window.location.href = 'quiz-page/quiz-1.html';"
       >

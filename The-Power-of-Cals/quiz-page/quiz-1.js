@@ -1,3 +1,7 @@
+const uName = localStorage.getItem("player1");
+
+console.log(uName);
+
 document.getElementById("display").style.display = "none";
 
 document.getElementById("button").disabled = true;
@@ -16,7 +20,7 @@ const num2 = getRandomNum(10);
 const ques2 = document.getElementById("ques2");
 ques2.innerText = num2;
 
-//function to generate an array with 3 random answer plus correct answer
+//function to generate an array with 4 random answer plus correct answer
 function randomUniqueNum(range, outputCount) {
   let arr = [];
   for (let i = 0; i < range; i++) {
@@ -56,53 +60,16 @@ const correctAnswer = document.getElementsByClassName("ans");
 const ranAns = checkNum(randomUniqueNum(19, 4));
 answerBox(correctAnswer);
 
+//assign every answer box with event listener
 for (let i = 0; i < correctAnswer.length; i++) {
   correctAnswer[i].addEventListener("click", checkAns);
 }
 
-let totalScore = 0;
-// let score = 0;
-let point = 20;
-
-let total = 0;
-
-function collectScore(number) {
-  totalScore = number + totalScore;
-  return totalScore;
-}
-
-function checkAns(event) {
-  const clicked = event.target;
-  if (clicked.innerText != answer) {
-    const current = clicked.innerText;
-    clicked.innerText = "Wrong!";
-    setTimeout(() => (clicked.innerText = current), 300);
-  }
-
-  if (clicked.innerText == answer) {
-    const current = clicked.innerText;
-    clicked.innerText = "Bingo!";
-    setTimeout(() => (clicked.innerText = current), 1000);
-
-    document.getElementById("button").disabled = false;
-
-    function poi(number) {
-      total = number + total;
-      return total;
-    }
-    let totalPoint = poi(point);
-    // let totalPoint = collectScore(point);
-    document.getElementById("point").innerText = totalPoint;
-
-    for (let i = 0; i < correctAnswer.length; i++) {
-      correctAnswer[i].removeEventListener("click", checkAns);
-    }
-    return;
-  }
-}
+// set timer for the game
+let time;
 
 function countdown(number) {
-  setInterval(function () {
+  time = setInterval(function () {
     if (number > 0) {
       document.getElementById("timer").innerText = number + "s";
       number -= 1;
@@ -115,10 +82,59 @@ function countdown(number) {
   }, 1000);
 }
 
-document.getElementById("final").innerText = totalScore;
-
 countdown(10);
+
+// function to calculate generate total score.
+let totalScore = 0;
+let point = 20;
+let totalPoint = 0;
+
+function collectScore(number) {
+  totalScore = number + totalScore;
+  return totalScore;
+}
+
+//event listener function
+function checkAns(event) {
+  const clicked = event.target;
+  if (clicked.innerText != answer) {
+    const current = clicked.innerText;
+    clicked.innerText = "Wrong!";
+    setTimeout(() => (clicked.innerText = current), 300);
+  } else {
+    clearInterval(time);
+    const current = clicked.innerText;
+    clicked.innerText = "Bingo!";
+    setTimeout(() => (clicked.innerText = current), 1000);
+
+    document.getElementById("button").disabled = false;
+
+    totalPoint += point;
+
+    document.getElementById("point").innerText = totalPoint;
+
+    for (let i = 0; i < correctAnswer.length; i++) {
+      correctAnswer[i].removeEventListener("click", checkAns);
+    }
+
+    return;
+  }
+}
+
+class playerdetail {
+  constructor(username, score) {
+    (this.username = username), (this.score = score);
+  }
+}
+
+const player1 = new playerdetail(uName, totalScore);
+
+console.log(player1);
+
+localStorage.setItem("quiz1", totalScore);
+document.getElementById("final").innerText = totalScore;
 
 collectScore(point);
 
 localStorage.setItem("quiz1Total", totalScore);
+localStorage.setItem("pName", uName);
