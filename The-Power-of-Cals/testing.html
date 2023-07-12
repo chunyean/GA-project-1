@@ -5,46 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Power of Cals</title>
     <link href="https://fonts.cdnfonts.com/css/homesweet" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/all-disney" rel="stylesheet" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="quiz-page/quiz-style.css" />
+    <link rel="stylesheet" href="The-Power-of-Cals.css" />
   </head>
+  <header>
+    Welcome to Cals World <br />
+    You will get the fun of CALS
+  </header>
   <body>
-    <div class="number" id="number">
-      <div class="box-1" id="ques1"></div>
-      <div class="plus" id="plus">+</div>
-      <div class="box-1" id="ques2"></div>
-    </div>
-    <div class="answer" id="answer">
-      <button class="ans" id="ans1">ans 1</button>
-      <button class="ans" id="ans2">ans 2</button>
-      <button class="ans" id="ans3">ans 3</button>
-      <button class="ans" id="ans4">ans 4</button>
-      <div class="score" id="score">
-        score
-        <div class="point" id="point">0</div>
+    <main>
+      <div class="words" id="words">
+        <div class="intro" id="intro">Little Introduction</div>
+        <div class="modal" id="modal">
+          <div class="contents" id="contents">
+            <span class="close" id="close">x</span>
+            <p>
+              The Power of Cals<br />
+
+              Cals is stand for calcualtion. <br />
+
+              This game is create to let player enjoy the fun of calculation.
+              Gain the function of every symbol of calculation.<br />
+
+              Starting we will play with plus (+) calculation. <br />
+
+              Each quiz will have 10second to answer. <br />
+
+              Try your best to get the highest score.<br />
+
+              Have Fun!!!
+            </p>
+          </div>
+        </div>
+        <input
+          type="text"
+          id="playername"
+          name="playername"
+          value=""
+          placeholder="Please key in your name"
+        />
+        <input type="submit" id="btn" value="submit" onclick="getValue()" />
+        <br />
       </div>
-      <div class="timer" id="timer"></div>
-      <button type="button" class="btn btn-outline-danger" id="button">
-        Next Quiz
-      </button>
-    </div>
-    <div class="display" id="display">
-      <div class="final" id="final">Final Score</div>
-      <div class="thx" id="thx">Thank you</div>
+      <div class="wel" id="wel">
+        <div class="welcome" id="welcome"></div>
+        <!-- <div class="guide" id="guide"></div> -->
+      </div>
       <button
         type="button"
-        class="btn btn-outline-danger"
-        onclick="src='quiz-page/quiz-2.js';"
+        class="btn btn-danger btn-lg"
+        id="start"
+        onclick="window.location.href = 'quiz-page/quiz-1.html';"
       >
-        Main Menu
+        Start
       </button>
-    </div>
-    <script src="testing.js"></script>
-    <script src="quiz-page\quiz-2.js"></script>
+      <script src="The-Power-of-Cals.js"></script>
+    </main>
   </body>
 </html>
