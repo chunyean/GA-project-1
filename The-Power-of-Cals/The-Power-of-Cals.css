@@ -1,8 +1,3 @@
-/* font-family: 'New Walt Disney Font', sans-serif;
-font-family: 'New Walt Disney UI', sans-serif;
-font-family: 'Waltograph', sans-serif;
-font-family: 'Waltograph UI', sans-serif; */
-
 header {
   text-align: center;
   font-size: 50px;
@@ -11,6 +6,14 @@ header {
   max-width: 100%;
   max-height: 100%;
   padding: 50px;
+}
+
+body {
+  text-align: center;
+  background-image: url("https://getwallpapers.com/wallpaper/full/3/c/1/399285.jpg");
+  background-attachment: fixed;
+  background-size: 90%;
+  background-position: center;
 }
 
 .words {
@@ -28,37 +31,6 @@ header {
   align-content: center;
   justify-content: center;
   font-size: 30px;
-}
-
-.score {
-  grid-area: 1/8/2/9;
-  text-align: center;
-  font-size: 30px;
-}
-
-#playername {
-  grid-area: 1/5/2/6;
-  border-color: aquamarine;
-  text-align: center;
-  font-size: 30px;
-}
-
-body {
-  text-align: center;
-  background-image: url("https://getwallpapers.com/wallpaper/full/3/c/1/399285.jpg");
-  background-attachment: fixed;
-  background-size: 90%;
-  background-position: center;
-}
-
-#btn {
-  grid-area: 1/6/2/7;
-  margin-top: 20px;
-  height: 30px;
-}
-
-#start {
-  margin: 50px;
 }
 
 .modal {
@@ -94,8 +66,21 @@ body {
   font-size: 20px;
 }
 
+#playername {
+  grid-area: 1/5/2/6;
+  border-color: aquamarine;
+  text-align: center;
+  font-size: 30px;
+}
+
+#btn {
+  grid-area: 1/6/2/7;
+  margin-top: 20px;
+  height: 30px;
+}
+
 .wel {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(3, 33%);
   grid-template-rows: 100px;
   font-family: "Waltograph UI", sans-serif;
@@ -107,4 +92,8 @@ body {
   justify-self: center;
   background-color: honeydew;
   font-size: 30px;
+}
+
+#start {
+  margin: 50px;
 }
