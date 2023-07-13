@@ -136,12 +136,17 @@ function checkAns(event) {
     //next quiz button will be activate
     document.getElementById("button").disabled = false;
 
-    return;
+    localStorage.setItem("quiz3Total", totalPoint);
   }
 }
 
-//generate the score
-collectScore(point);
+const playerHistory = JSON.parse(localStorage.getItem("playerHistory"));
 
-//passing score to another page
-localStorage.setItem("quiz3Total", totalScore);
+function updateScore(totalScore) {
+  let last = playerHistory.pop();
+  last.score = totalScore;
+  playerHistory.push(last);
+  localStorage.setItem("playerHistory", JSON.stringify(playerHistory));
+}
+
+updateScore(totalScore);

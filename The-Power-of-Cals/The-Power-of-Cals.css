@@ -30,7 +30,10 @@ body {
   grid-area: 1/2/2/3;
   align-content: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 50px;
+  color: midnightblue;
+  cursor: pointer;
+  text-shadow: 2px 2px 4px cornflowerblue;
 }
 
 .modal {
@@ -96,4 +99,33 @@ body {
 
 #start {
   margin: 50px;
+}
+
+.score {
+  grid-area: 1/8/2/9;
+  align-content: center;
+  justify-content: center;
+  font-size: 40px;
+  color: midnightblue;
+  cursor: pointer;
+  text-shadow: 2px 2px 4px cornflowerblue;
+}
+
+.tbl {
+  display: none;
+}
+
+.tClass {
+  border: 2px solid black;
+  font-size: 30px;
+  background-color: aquamarine;
+  width: 200px;
+}
+
+.hide {
+  grid-area: 1/8/2/9;
+  align-content: center;
+  justify-content: center;
+  font-size: 30px;
+  cursor: pointer;
 }

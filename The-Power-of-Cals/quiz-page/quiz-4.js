@@ -5,6 +5,8 @@ let totalScore = Number(localStorage.getItem("quiz3Total"));
 const point = 20;
 let totalPoint = Number(localStorage.getItem("quiz3Total"));
 
+console.log(totalScore);
+
 //preset default
 document.getElementById("button").disabled = true;
 document.getElementById("point").innerText = totalScore;
@@ -136,12 +138,19 @@ function checkAns(event) {
     //next quiz button will be activate
     document.getElementById("button").disabled = false;
 
-    return;
+    localStorage.setItem("quiz4Total", totalPoint);
+
+    updateScore(totalScore);
   }
 }
 
-//generate the score
-collectScore(point);
+const playerHistory = JSON.parse(localStorage.getItem("playerHistory"));
 
-//passing score to another page
-localStorage.setItem("quiz4Total", totalScore);
+function updateScore(totalScore) {
+  let last = playerHistory.pop();
+  last.score = totalScore;
+  playerHistory.push(last);
+  localStorage.setItem("playerHistory", JSON.stringify(playerHistory));
+}
+
+

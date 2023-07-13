@@ -136,12 +136,25 @@ function checkAns(event) {
     //next quiz button will be activate
     document.getElementById("button").disabled = false;
 
-    return;
+    localStorage.setItem("quiz5Total", totalPoint);
+
+    updateScore(totalScore);
   }
 }
 
-//generate the score
-collectScore(point);
+// //generate the score
+// collectScore(point);
 
-//passing score to another page
-localStorage.setItem("quiz5Total", totalScore);
+// //passing score to another page
+// localStorage.setItem("quiz5Total", totalScore);
+
+const playerHistory = JSON.parse(localStorage.getItem("playerHistory"));
+
+function updateScore(totalScore) {
+  let last = playerHistory.pop();
+  last.score = totalScore;
+  playerHistory.push(last);
+  localStorage.setItem("playerHistory", JSON.stringify(playerHistory));
+}
+
+
