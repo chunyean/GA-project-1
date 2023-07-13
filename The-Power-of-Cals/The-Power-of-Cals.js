@@ -7,7 +7,7 @@ const showScoreBtn = document.getElementById("score");
 const hideScoreBtn = document.getElementById("hide");
 const tblUp = document.getElementById("tbl");
 const playerHistory = JSON.parse(localStorage.getItem("playerHistory"));
-const table = createTableFromObjects(playerHistory);
+const table = createTable(playerHistory);
 
 //deactivate start button
 document.getElementById("start").disabled = true;
@@ -46,36 +46,41 @@ function storePlayerData(playerName) {
 
   localStorage.setItem("playerHistory", JSON.stringify(playerHistory));
 }
-
+console.log(showScoreBtn);
 // 5. create table for last three player
-function createTableFromObjects(data) {
+function createTable(info) {
   const table = document.createElement("table");
-  const hRow = document.createElement("tr");
+  document.getElementById("tbl").appendChild(table);
   table.className = "tClass";
 
-  const keys = Object.keys(data[0]);
-  for (const key of keys) {
-    const hCell = document.createElement("th");
-    hCell.className = "tClass";
-    hCell.textContent = key;
-    hRow.appendChild(hCell);
-  }
-  table.appendChild(hRow);
+  const rowHead = document.createElement("tr");
 
-  const newData = data.splice(-3);
-  for (const obj of newData) {
-    const dataRow = document.createElement("tr");
-    dataRow.className = "tClass";
-    for (const key of keys) {
-      const dataCell = document.createElement("td");
-      dataCell.className = "tClass";
-      dataCell.textContent = obj[key];
-      dataRow.appendChild(dataCell);
-    }
-    table.appendChild(dataRow);
-  }
+  const hName = document.createElement("th");
+  hName.className = "tClass";
+  hName.innerText = "Name";
+  rowHead.appendChild(hName);
 
-  return table;
+  const hScore = document.createElement("th");
+  hScore.innerText = "Score";
+  rowHead.appendChild(hScore);
+  table.appendChild(rowHead);
+
+  const newInfo = info.splice(-3);
+  for (const data of newInfo) {
+    const row = document.createElement("tr");
+
+    const cellName = document.createElement("td");
+    row.appendChild(cellName);
+    cellName.className = "tClass";
+    cellName.innerText = data.name;
+
+    const cellScore = document.createElement("td");
+    row.appendChild(cellScore);
+    cellScore.className = "tClass";
+    cellScore.innerText = data.score;
+
+    table.appendChild(row);
+  }
 }
 
 //6. show score table
