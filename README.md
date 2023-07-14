@@ -1,4 +1,4 @@
-1. Game Title
+1. Game Title:
    The-Power-Of-Cals
 
 2. Game Description
