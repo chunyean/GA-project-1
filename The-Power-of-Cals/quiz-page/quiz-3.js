@@ -11,7 +11,7 @@ const ques2 = document.getElementById("ques2");
 const correctAnswer = document.getElementsByClassName("ans");
 const nextQ = document.getElementById("button");
 const mainM = document.getElementById("main-page");
-const showPoint = document.getElementById("point")
+const showPoint = document.getElementById("point");
 
 //preset default
 nextQ.disabled = true;
@@ -156,7 +156,7 @@ function nextQuiz() {
 
 //12. direct to main page
 function mainPage() {
-  location.replace("../The-Power-of-Cals.html");
+  location.replace("../../index.html");
 }
 
 //generate random number(0, 9) for left box

@@ -156,7 +156,7 @@ function nextQuiz() {
 
 //12. direct to main page
 function mainPage() {
-  location.replace("../The-Power-of-Cals.html");
+  location.replace("../../index.html");
 }
 
 //generate random number(0, 9) for left box
