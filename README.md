@@ -1,4 +1,4 @@
-1. Game Title
+1. Game Title:
    The-Power-Of-Cals
 
 2. Game Description
@@ -9,17 +9,19 @@
    Contain 5 quiz.
 
 3. Technologies Used and reference
-   -JavaScript
-   -CSS(Cascading Style Sheets)
-   -HTML(HyperText Markup Language)
-   -bootstrap (for documentation)
-   
-
-5. Way to Run This Game
+      -JavaScript
+      -CSS(Cascading Style Sheets)
+      -HTML(HyperText Markup Language)
+      -bootstrap (for documentation)
+      -https://dev.to/sagdish/generate-unique-non-repeating-random-numbers-g6g
+      -https://www.w3schools.com/js/default.asp
+      -https://www.youtube.com/@JamesQQuick
+ 
+4. Way to Run This Game
    From the main folder, select The-Power-Of-Cals folder then choose The-Power-Of-Cals.html this file.
    Direct click on it, The-Power-Of-Cals.html is suitable to run by any browser.
 
-6. Start game key in player name to record the most three recent player.
+5. Start game key in player name to record the most three recent player.
  <img width="866" alt="main page" src="https://github.com/chunyean/The-Power-of-Cals/assets/135581973/46c24075-5af7-4f74-83a8-f33dbd873481">
 
    Plus up the two digit show at the left and right box.
