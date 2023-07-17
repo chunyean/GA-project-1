@@ -2,7 +2,7 @@ body {
   /* background-image: url(https://mcdn.wallpapersafari.com/medium/11/52/aWAODV.jpg); */
   background-image: url(https://getwallpapers.com/wallpaper/full/2/9/d/1040399-amazing-squirtle-wallpaper-1920x1200-for-phone.jpg);
   background-attachment: fixed;
-  background-size: 95%;
+  background-size: cover;
   background-position: center;
 }
 

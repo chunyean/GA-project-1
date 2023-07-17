@@ -12,7 +12,7 @@ body {
   text-align: center;
   background-image: url("https://getwallpapers.com/wallpaper/full/3/c/1/399285.jpg");
   background-attachment: fixed;
-  background-size: 90%;
+  background-size: cover;
   background-position: center;
 }
 
@@ -128,4 +128,10 @@ body {
   justify-content: center;
   font-size: 30px;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    orientation: vertical;
+  }
 }
