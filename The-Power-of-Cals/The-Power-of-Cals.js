@@ -46,7 +46,6 @@ function storePlayerData(playerName) {
 
   localStorage.setItem("playerHistory", JSON.stringify(playerHistory));
 }
-console.log(showScoreBtn);
 // 5. create table for last three player
 function createTable(info) {
   const table = document.createElement("table");
@@ -100,4 +99,4 @@ submitBtn.addEventListener("click", getValue);
 showScoreBtn.addEventListener("click", showScoreTable);
 hideScoreBtn.addEventListener("click", hideScoreTable);
 
-document.getElementById("tbl").appendChild(table);
+// document.getElementById("tbl").appendChild(table);
